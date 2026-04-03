@@ -244,23 +244,12 @@
       max-width: 480px;
     }
 
-    .hero-placeholder-note {
-      margin-top: 1.5rem;
-      padding: 1rem 1.25rem;
-      background-color: #161b22;
-      border: 1px dashed #30363d;
-      border-radius: 8px;
-      font-size: 0.82rem;
-      color: #6e7681;
-      line-height: 1.6;
-    }
-
     /* CSS:HERO-END */
 
 
     /* ============================================================
        CSS:ABOUT-START
-       About 區樣式：.section-about
+       About 區樣式：.section-about、.about-inner、.about-text、.about-image-wrap
        ============================================================ */
 
     .section-about {
@@ -270,17 +259,33 @@
     .about-inner {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 2.5rem;
     }
 
-    .about-placeholder-note {
-      padding: 1rem 1.25rem;
-      background-color: #161b22;
-      border: 1px dashed #30363d;
-      border-radius: 8px;
-      font-size: 0.82rem;
-      color: #6e7681;
-      line-height: 1.6;
+    .about-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .about-text p {
+      color: #c9d1d9;
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+
+    .about-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .about-image-wrap {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #21262d;
+      width: 100%;
     }
 
     /* CSS:ABOUT-END */
@@ -309,17 +314,6 @@
       border-radius: 6px;
       font-size: 0.875rem;
       border: 1px solid #30363d;
-    }
-
-    .skills-placeholder-note {
-      margin-top: 1.5rem;
-      padding: 1rem 1.25rem;
-      background-color: #0d1117;
-      border: 1px dashed #30363d;
-      border-radius: 8px;
-      font-size: 0.82rem;
-      color: #6e7681;
-      line-height: 1.6;
     }
 
     /* CSS:SKILLS-END */
@@ -369,17 +363,6 @@
       color: #8b949e;
     }
 
-    .projects-placeholder-note {
-      margin-top: 1.5rem;
-      padding: 1rem 1.25rem;
-      background-color: #161b22;
-      border: 1px dashed #30363d;
-      border-radius: 8px;
-      font-size: 0.82rem;
-      color: #6e7681;
-      line-height: 1.6;
-    }
-
     /* CSS:PROJECTS-END */
 
 
@@ -415,17 +398,6 @@
 
     .contact-item a {
       color: #58a6ff;
-    }
-
-    .contact-placeholder-note {
-      margin-top: 1.5rem;
-      padding: 1rem 1.25rem;
-      background-color: #0d1117;
-      border: 1px dashed #30363d;
-      border-radius: 8px;
-      font-size: 0.82rem;
-      color: #6e7681;
-      line-height: 1.6;
     }
 
     /* CSS:CONTACT-END */
@@ -476,7 +448,17 @@
 
       .about-inner {
         flex-direction: row;
-        align-items: flex-start;
+        align-items: center;
+        gap: 3rem;
+      }
+
+      .about-text {
+        flex: 1 1 0;
+      }
+
+      .about-image-wrap {
+        flex: 0 0 340px;
+        width: 340px;
       }
 
       .project-grid {
@@ -542,9 +524,6 @@
                 <a class="btn btn-primary" href="#projects">瀏覽作品集</a>
                 <a class="btn btn-outline" href="mailto:hello@example.com">聯絡我</a>
               </div>
-              <div class="hero-placeholder-note">
-                📌 開發者備註：之後會用 Section SDD 的 Prompt 產生新的 section，請把新的 section 程式碼整段貼在 SECTION:HERO-START 與 SECTION:HERO-END 兩個註解中間，完全取代現在這一區。
-              </div>
             </div>
             <div class="hero-image-wrap">
               <img
@@ -564,14 +543,28 @@
       <!-- SECTION:ABOUT-START -->
       <section id="about" class="section section-about" aria-labelledby="about-heading">
         <div class="container">
-          <h2 id="about-heading" class="section-title">關於我（之後會用 Section SDD 替換）</h2>
+          <h2 id="about-heading" class="section-title">關於我</h2>
           <div class="about-inner">
-            <p>
-              這裡目前是 About 區的占位內容。<br />
-              未來會用 Section SDD 的 Prompt 產生包含個人故事、工作經歷與價值觀的正式內容。
-            </p>
-            <div class="about-placeholder-note">
-              📌 開發者備註：之後會用 Section SDD 的 Prompt 產生新的 section，請把新的 section 程式碼整段貼在 SECTION:ABOUT-START 與 SECTION:ABOUT-END 兩個註解中間，完全取代現在這一區。
+            <div class="about-text">
+              <p>
+                我是一位工程師，熱愛研究軟體技術。熟悉 JavaScript 與 Python，並有使用 React 及 Vue 框架的開發經驗，喜歡將想法實作成真實可用的產品。
+              </p>
+              <p>
+                我重視團隊合作，樂於分享專業知識，相信技術交流能讓彼此成長得更快。工作之餘喜歡跑步、爬山與攝影，透過戶外活動保持思緒清晰與創意能量。
+              </p>
+              <div class="about-actions">
+                <a class="btn btn-primary" href="#projects">查看作品集</a>
+                <a class="btn btn-outline" href="#contact">聯絡我</a>
+              </div>
+            </div>
+            <div class="about-image-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=800&auto=format&fit=crop&q=80"
+                alt="工程師在筆電前專注撰寫程式碼"
+                loading="lazy"
+                width="800"
+                height="534"
+              />
             </div>
           </div>
         </div>
@@ -582,8 +575,7 @@
       <!-- SECTION:SKILLS-START -->
       <section id="skills" class="section section-skills" aria-labelledby="skills-heading">
         <div class="container">
-          <h2 id="skills-heading" class="section-title">技能（之後會用 Section SDD 替換）</h2>
-          <p>這裡目前是 Skills 區的占位內容，以下為範例技能標籤，之後會替換為正式分類技能清單。</p>
+          <h2 id="skills-heading" class="section-title">技能</h2>
           <ul class="skill-list" aria-label="技能清單（占位）">
             <li class="skill-item">HTML5</li>
             <li class="skill-item">CSS3</li>
@@ -593,9 +585,6 @@
             <li class="skill-item">Git</li>
             <li class="skill-item">RWD</li>
           </ul>
-          <div class="skills-placeholder-note">
-            📌 開發者備註：之後會用 Section SDD 的 Prompt 產生新的 section，請把新的 section 程式碼整段貼在 SECTION:SKILLS-START 與 SECTION:SKILLS-END 兩個註解中間，完全取代現在這一區。
-          </div>
         </div>
       </section>
       <!-- SECTION:SKILLS-END -->
@@ -604,8 +593,7 @@
       <!-- SECTION:PROJECTS-START -->
       <section id="projects" class="section section-projects" aria-labelledby="projects-heading">
         <div class="container">
-          <h2 id="projects-heading" class="section-title">作品集（之後會用 Section SDD 替換）</h2>
-          <p>這裡目前是 Projects 區的占位內容，以下為範例作品卡片，之後會替換為正式作品。</p>
+          <h2 id="projects-heading" class="section-title">作品集</h2>
           <div class="project-grid">
             <article class="project-card">
               <img
@@ -647,9 +635,6 @@
               </div>
             </article>
           </div>
-          <div class="projects-placeholder-note">
-            📌 開發者備註：之後會用 Section SDD 的 Prompt 產生新的 section，請把新的 section 程式碼整段貼在 SECTION:PROJECTS-START 與 SECTION:PROJECTS-END 兩個註解中間，完全取代現在這一區。
-          </div>
         </div>
       </section>
       <!-- SECTION:PROJECTS-END -->
@@ -658,8 +643,7 @@
       <!-- SECTION:CONTACT-START -->
       <section id="contact" class="section section-contact" aria-labelledby="contact-heading">
         <div class="container">
-          <h2 id="contact-heading" class="section-title">聯絡我（之後會用 Section SDD 替換）</h2>
-          <p>這裡目前是 Contact 區的占位內容，以下為聯絡方式占位清單，之後會替換為正式內容。</p>
+          <h2 id="contact-heading" class="section-title">聯絡我</h2>
           <ul class="contact-list">
             <li class="contact-item">
               <span class="contact-label">Email</span>
@@ -674,9 +658,6 @@
               <a href="https://www.linkedin.com/in/yourname" target="_blank" rel="noopener noreferrer">linkedin.com/in/yourname</a>
             </li>
           </ul>
-          <div class="contact-placeholder-note">
-            📌 開發者備註：之後會用 Section SDD 的 Prompt 產生新的 section，請把新的 section 程式碼整段貼在 SECTION:CONTACT-START 與 SECTION:CONTACT-END 兩個註解中間，完全取代現在這一區。
-          </div>
         </div>
       </section>
       <!-- SECTION:CONTACT-END -->
